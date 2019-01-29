@@ -4,7 +4,7 @@ config SND_SOC_WM8960_SOUNDCARD
 	help
 	  Say Y or M if you want to add support for WM8960 soundcard device.
 	  
-config CONFIG_SND_SOC_WM8960
+config SND_SOC_WM8960_X
 	tristate "ASoC support for wm8960(hacked version)"
 	depends on SND_SOC_WM8960_SOUNDCARD
 	help
