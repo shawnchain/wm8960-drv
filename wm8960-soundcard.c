@@ -590,5 +590,5 @@ module_platform_driver(asoc_simple_card);
 
 MODULE_ALIAS("platform:asoc-simple-card");
 MODULE_LICENSE("GPL v2");
-MODULE_DESCRIPTION("ASoC wm8960 Sound Card");
+MODULE_DESCRIPTION("ASoC wm8960 Sound Card(ported by BG5HHP)");
 MODULE_AUTHOR("Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>");

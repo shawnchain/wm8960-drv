@@ -1,11 +1,11 @@
 
 config SND_SOC_WM8960_SOUNDCARD
-	tristate "WM8960 Soundcard Device Driver"
+	tristate "WM8960 Soundcard Device Driver(ported by BG5HHP)"
 	help
 	  Say Y or M if you want to add support for WM8960 soundcard device.
 	  
 config SND_SOC_WM8960_X
-	tristate "ASoC support for wm8960(hacked version)"
+	tristate "ASoC support for wm8960(ported by BG5HHP)"
 	depends on SND_SOC_WM8960_SOUNDCARD
 	help
 	  Say Y or M if you want to add support for codecs attached to
