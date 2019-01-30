@@ -485,7 +485,9 @@ static int asoc_simple_card_probe(struct platform_device *pdev)
 	struct device_node *np = pdev->dev.of_node;
 	struct device *dev = &pdev->dev;
 	int num, ret;
-
+#if defined(DEBUG) && DEBUG !=0
+	kprintf("wm8960_soundcard: setup alsa soundcard device");
+#endif
 	/* Get the number of DAI links */
 	if (np && of_get_child_by_name(np, PREFIX "dai-link"))
 		num = of_get_child_count(np);
@@ -556,8 +558,12 @@ static int asoc_simple_card_probe(struct platform_device *pdev)
 	spin_lock_init(&priv->lock);
 
 	ret = devm_snd_soc_register_card(&pdev->dev, &priv->snd_card);
-	if (ret >= 0)
+	if (ret >= 0){
+#if defined(DEBUG) && DEBUG !=0
+		kprintf("wm8960_soundcard: registered soundcard device success");
+#endif
 		return ret;
+	}
 
 err:
 	asoc_simple_card_clean_reference(&priv->snd_card);
