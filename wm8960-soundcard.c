@@ -9,6 +9,8 @@
  * published by the Free Software Foundation.
  */
 /* #undef DEBUG */
+#define DEBUG    1
+
 #include <linux/version.h>
 #include <linux/clk.h>
 #include <linux/device.h>
