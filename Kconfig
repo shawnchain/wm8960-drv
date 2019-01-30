@@ -11,8 +11,4 @@ config SND_SOC_WM8960_X
 	  Say Y or M if you want to add support for codecs attached to
 	  the WM8960 Soundcard device. You will also need to
 	  select the audio interfaces to support below.
-	  
-
-
-
-
+		
