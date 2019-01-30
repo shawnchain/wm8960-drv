@@ -8,7 +8,6 @@ config SND_SOC_WM8960_X
 
 config SND_SOC_WM8960_SOUNDCARD
 	tristate "WM8960 Soundcard Device Driver(ported by BG5HHP)"
-	select SND_SIMPLE_CARD_UTILS
 	depends on SND_SOC_WM8960_X
 	help
 	  Say Y or M if you want to add support for WM8960 soundcard device.
