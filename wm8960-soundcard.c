@@ -485,9 +485,7 @@ static int asoc_simple_card_probe(struct platform_device *pdev)
 	struct device_node *np = pdev->dev.of_node;
 	struct device *dev = &pdev->dev;
 	int num, ret;
-#if defined(DEBUG) && DEBUG !=0
-	kprintf("wm8960_soundcard: setup alsa soundcard device");
-#endif
+	dev_info(dev, "wm8960_soundcard: setup alsa soundcard device");
 	/* Get the number of DAI links */
 	if (np && of_get_child_by_name(np, PREFIX "dai-link"))
 		num = of_get_child_count(np);
@@ -559,9 +557,7 @@ static int asoc_simple_card_probe(struct platform_device *pdev)
 
 	ret = devm_snd_soc_register_card(&pdev->dev, &priv->snd_card);
 	if (ret >= 0){
-#if defined(DEBUG) && DEBUG !=0
-		kprintf("wm8960_soundcard: registered soundcard device success");
-#endif
+		dev_info(dev,"wm8960_soundcard: registered soundcard device success");
 		return ret;
 	}
 
@@ -599,4 +595,4 @@ module_platform_driver(asoc_simple_card);
 MODULE_ALIAS("platform:asoc-simple-card");
 MODULE_LICENSE("GPL v2");
 MODULE_DESCRIPTION("ASoC wm8960 Sound Card(ported by BG5HHP)");
-MODULE_AUTHOR("Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>");
+MODULE_AUTHOR("BG5HHP <bg5hhp@hamclub.net>");

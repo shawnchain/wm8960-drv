@@ -1311,9 +1311,7 @@ static int wm8960_i2c_probe(struct i2c_client *i2c,
 	struct wm8960_priv *wm8960;
 	int ret;
 
-#if defined(DEBUG) && DEBUG !=0
-	kprintf("wm8960_codec: probing device");
-#endif
+	dev_info(&i2c->dev, "wm8960_codec: probing device");
 	wm8960 = devm_kzalloc(&i2c->dev, sizeof(struct wm8960_priv),
 			      GFP_KERNEL);
 	if (wm8960 == NULL)
@@ -1370,9 +1368,7 @@ static int wm8960_i2c_probe(struct i2c_client *i2c,
 	ret = snd_soc_register_codec(&i2c->dev,
 			&soc_codec_dev_wm8960, &wm8960_dai, 1);
 
-#if defined(DEBUG) && DEBUG !=0
-	kprintf("wm8960_codec: device setup success");
-#endif
+	dev_info(&i2c->dev, "wm8960_codec: device setup success");
 	return ret;
 }
 
