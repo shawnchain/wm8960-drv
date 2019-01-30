@@ -1,4 +1,3 @@
-
 config SND_SOC_WM8960_X
 	tristate "ASoC support for wm8960(ported by BG5HHP)"
 	depends on I2C
