@@ -30,7 +30,17 @@ fi
 
 alsactl restore
 
-#Fore 3.5mm ('headphone') jack
-amixer cset numid=3 1 
+#Speaker Volume
+amixer cset numid=10 125
 
+#Headphone Volume
+amixer cset numid=11 65
 
+# enable deemphasis on|off
+amixer cset numid=21 off
+
+# enable 3D
+amixer cset numid=25 on
+
+# enable steoro(0)/mono(1)
+#amixer cset numid=42 1
